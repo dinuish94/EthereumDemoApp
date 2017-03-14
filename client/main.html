@@ -3,23 +3,45 @@
 </head>
 
 <body>
-  <h1>My First DApp!</h1>
 
   {{> hello}}
 
 </body>
 
 <template name="hello">
-  <button>Click Me</button>
-  <p>Your balance is {{counter}}</p>
+    <div role="tabpanel" class="tab-pane active" id="furniture">
+        <h3> Account Number : {{account}} {{TemplateVar.get "account"}}</h3><br>
+        <div class="col-md-6">
+            <h5> 1. Create Furniture Item</h5>
+            <div class="form-group">
+                <label for="item">Item:</label>
+                <input type="text" class="item form-control" id = "item"><br>
+                <label for="quantity">Quantity:</label>
+                <input type="text" class="quantity form-control" id = "quantity"><br>
+                <label for="unitP">Unit Price:</label>
+                <input type="text" class="unitPrice form-control" id="unitP"><br>
+                <button class="create btn btn-primary" id="set">Set Value</button>
+                <br><br>
+                <div class="col-md-12">
+                    {{counter}} {{TemplateVar.get "counter"}}
+                    <p>Transaction ID: {{transaction}} {{TemplateVar.get "transaction"}}</p>
+                    <p>Block Number: {{blockNo}} {{TemplateVar.get "blockNo"}}</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <h5> 2. Get Item by Item ID</h5>
+            <div class="form-group">
+                <label for="itemId">Item ID:</label>
+                <input type="text" class="itemId form-control" id="no"><br>
+
+                Item: {{TemplateVar.get "item"}}<br>
+                Quantity: {{TemplateVar.get "quantity"}}<br>
+                Unit Price: {{TemplateVar.get "price"}}<br>
+                <br>
+                <button class="get btn btn-primary" id="get">Get Value</button>
+            </div>
+        </div>
+    </div>
 </template>
 
-<!--<template name="info">-->
-  <!--<h2>Learn Meteor!</h2>-->
-  <!--<ul>-->
-    <!--<li><a href="https://www.meteor.com/try" target="_blank">Do the Tutorial</a></li>-->
-    <!--<li><a href="http://guide.meteor.com" target="_blank">Follow the Guide</a></li>-->
-    <!--<li><a href="https://docs.meteor.com" target="_blank">Read the Docs</a></li>-->
-    <!--<li><a href="https://forums.meteor.com" target="_blank">Discussions</a></li>-->
-  <!--</ul>-->
-<!--</template>-->
